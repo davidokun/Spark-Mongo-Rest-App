@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static spark.Spark.get;
+import static spark.Spark.halt;
 
 /**
  * Created by David Cuellar.
@@ -18,26 +19,27 @@ public class HelloFreemarkerController {
 
     public static void main(String[] args) {
 
-        StringWriter writer = new StringWriter();
         Configuration configuration = new Configuration();
         configuration.setClassForTemplateLoading(HelloSparkController.class, "/");
 
-        try {
-            Template helloTemplate = configuration.getTemplate("hello.ftl");
+        get("/helloFreemarker", (req, res) -> {
 
-            Map<String, Object> helloMap = new HashMap<>();
+            StringWriter writer = new StringWriter();
+            try {
 
-            helloMap.put("name", "Freemarker");
-            helloTemplate.process(helloMap, writer);
+                Template helloTemplate = configuration.getTemplate("hello.ftl");
 
-            System.out.println(writer);
+                Map<String, Object> helloMap = new HashMap<>();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TemplateException e) {
-            e.printStackTrace();
-        }
+                helloMap.put("name", "Freemarker");
+                helloTemplate.process(helloMap, writer);
 
-        get("/helloFreemarker", (req, res) -> writer.toString());
+            } catch (IOException | TemplateException e) {
+                halt(500);
+                e.printStackTrace();
+            }
+
+            return writer;
+        });
     }
 }
