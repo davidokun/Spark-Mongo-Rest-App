@@ -1,27 +1,36 @@
 # Spark-Mongo-Rest-App
-REST application using Spark Java framework, Freemaker and Mongo DB
+
+REST application using Spark Java framework, Freemaker and Mongo DB.
 
 ### Content
+
   - Docker container build and run
 
 ### Docker container build and run
 
-* First build the `1-base-java-server` image
-go to `/docker/1-base-java-server` folder and run:
+* Inside `docker` folder run script `build.sh`:
+
 ```sh
 $ sh build.sh
 ```
-* Then go to `/docker/2-base-mongodb-server` folder and run:
-```sh
-$ sh build.sh
-```
-* And for the final image go to `/docker/3-db-server` and run:
-```sh
-$ sh build.sh
-```
-* Finally run the `start-up.sh` script to create and start the container:
+
+This will create all docker images.
+
+* Then run script `start-up.sh`:
+
 ```sh
 $ sh start-up.sh
 ```
+
+This will create and run the docker container.
+
+* To validate the container execute this command:
+
+```
+$ docker ps -a
+```
+
+
+
 
 
