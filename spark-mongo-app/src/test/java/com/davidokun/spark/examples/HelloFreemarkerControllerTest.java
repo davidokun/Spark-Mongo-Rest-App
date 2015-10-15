@@ -1,4 +1,4 @@
-package com.davidokun;
+package com.davidokun.spark.examples;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
