@@ -11,5 +11,10 @@ public class HelloSparkController {
 
         get("/hello", (req, res) -> "Hello Spark Java");
 
+        get("/test", (req, res) -> "Hello test for Spark");
+
+        get("/echo/:something", (req, res) -> req.params(":something"));
+
+
     }
 }
