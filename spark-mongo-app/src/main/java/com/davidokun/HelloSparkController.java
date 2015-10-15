@@ -1,4 +1,15 @@
-Unstaged changes after reset:
-M	spark-mongo-app/pom.xml
-D	spark-mongo-app/src/main/java/com/davidokun/App.java
-M	spark-mongo-app/src/main/java/com/davidokun/HelloSparkController.java
+package com.davidokun;
+
+import static spark.Spark.get;
+
+/**
+ * Created by David Marin
+ */
+public class HelloSparkController {
+
+    public static void main( String[] args ) {
+
+        get("/hello", (req, res) -> "Hello Spark Java");
+
+    }
+}
