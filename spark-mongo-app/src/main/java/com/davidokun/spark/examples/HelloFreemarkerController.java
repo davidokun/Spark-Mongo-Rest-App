@@ -1,4 +1,4 @@
-package com.davidokun;
+package com.davidokun.spark.examples;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
