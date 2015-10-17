@@ -20,7 +20,7 @@ RUN yum -y install net-tools
 RUN mkdir /var/run/sshd
 RUN /usr/bin/ssh-keygen -A
 RUN echo 'root:secret' | chpasswd
-RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" ${JAVA_URL}
+RUN wget -c -O ${JAVA_FILE_NAME} --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" ${JAVA_URL}
 RUN tar xzf ${JAVA_FILE_NAME}
 RUN rm ${JAVA_FILE_NAME}
 RUN mv ${JAVA_VERSION} /usr/local/
