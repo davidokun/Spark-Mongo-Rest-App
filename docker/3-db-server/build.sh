@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build -t davidokun/db-server-spark-mongo-app .
+docker build -t david/centos7-mongo-db-server .

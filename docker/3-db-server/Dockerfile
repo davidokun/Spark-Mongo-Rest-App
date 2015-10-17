@@ -1,4 +1,4 @@
-FROM davidokun/base-mongodb-server-spark-mongo-app
+FROM david/centos7-base-mongodb-3-server
 
 MAINTAINER David Cuellar, davidokun99@gmail.com
 
