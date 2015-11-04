@@ -13,3 +13,5 @@ hs_err_pid*
 *.iml
 spark-mongo-app/.idea/
 spark-mongo-app/target/
+blog/.idea/
+blog/target/
